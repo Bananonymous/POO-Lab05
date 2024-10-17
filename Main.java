@@ -1,6 +1,8 @@
 public class Main {
-    //Hello World
     public static void main(String[] args) {
-        System.out.println("Hello World");
+
+        Matrix m1 = new Matrix(3, 3, 5);
+        m1.printMatrix();
+        
     }
 }
