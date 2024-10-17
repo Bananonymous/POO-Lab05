@@ -1,8 +1,2 @@
-# Ignorer les dossiers de construction
-**/out/
-
-# Ignorer les fichiers de configuration IDE
-**/.idea/
-
-.DS_Store
-.idea
+.idea/
+out/production/
