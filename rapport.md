@@ -163,7 +163,7 @@ Les résultats obtenus sont conformes aux attentes. Le programme génère une ex
 ### Code source 
 
 #### Matrix.java
-![](.Matrix.png)
+![](./Matrix.png)
 
 #### operations.java
 
