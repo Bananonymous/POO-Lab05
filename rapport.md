@@ -156,18 +156,22 @@ Ce test utilise des valeurs de dimension négatives, ce qui est un cas invalide 
 **Résultats Attendus** 
 Une exception ou un message d'erreur indiquant que les dimensions de matrice ne peuvent pas être négatives est attendu.
 
+**Résultats Obtenus**
+Les résultats obtenus sont conformes aux attentes. Le programme génère une exception pour les cas de dimensions incompatibles pour la multiplication, les modules nuls ou négatifs, et les matrices vides.
+
+
 ### Code source 
 
 #### Matrix.java
-![](/home/athena/Insync/POO/POO-Lab05/Matrix.png)
+![](.Matrix.png)
 
 #### operations.java
 
-![](/home/athena/Insync/POO/POO-Lab05/operations.png)
+![](./operations.png)
 
 #### Main.java
 
-![](/home/athena/Insync/POO/POO-Lab05/Main.png)
+![](./Main.png)
 
 ### Hypothèses de travail 
 
