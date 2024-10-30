@@ -53,55 +53,121 @@ Le programme est exécuté en ligne de commande avec les arguments suivants :
 
 Si les arguments ne sont pas fournis, des valeurs par défaut sont utilisées.
 
-### Tests
-Résultat de l'exécution du programme :
-```
-The Modulus is: 10
-Matrix 1:
-9 8 7 4 7
-1 6 5 0 6
-4 9 0 5 5
-4 6 0 3 5
-8 7 7 8 3
-Matrix 2:
-4 8 6 6 5
-4 9 7 2 0
-6 6 5 7 3
-9 2 2 2 7
-3 7 7 9 8
-M1 + M2:
-3 6 3 0 2
-5 5 2 2 6
-0 5 5 2 8
-3 8 2 5 2
-1 4 4 7 1
-M1 - M2:
-5 0 1 8 2
-7 7 8 8 6
-8 3 5 8 2
-5 4 8 1 8
-5 0 0 9 5
-M1 * M2:
-6 4 2 4 5
-4 4 5 0 0
-4 4 0 5 5
-6 2 0 6 5
-4 9 9 2 4
-```
+## Tests
+
+### Description
+
+Ce rapport documente les différents tests de cas limites effectués pour la classe `Main`, qui exécute des opérations de base (addition, soustraction et multiplication) sur deux matrices en utilisant une arithmétique modulaire.
+
+## Cas de Test
+
+#### Cas 1 : Matrices avec des valeurs par défaut
+
+**Description** 
+Ce test utilise des valeurs par défaut pour les matrices et le module, ce qui est supposé fonctionner normalement sans aucune erreur.
+
+**Entrée**
+\- Module : `10`
+\- Matrice 1 : `5x5`
+\- Matrice 2 : `5x5`
+
+**Résultats Attendus** 
+Toutes les opérations devraient s'effectuer correctement sans générer d'exception. La sortie devrait inclure les matrices générées aléatoirement, ainsi que leurs résultats après chaque opération d'addition, de soustraction, et de multiplication.
+
+#### Cas 2 : Dimensions non compatibles pour la multiplication
+
+**Description** 
+Ce test crée deux matrices avec des dimensions incompatibles pour la multiplication. Ce cas permet de vérifier si le programme gère correctement cette erreur.
+
+**Entrée**
+\- Module : `10`
+\- Matrice 1 : `3x5`
+\- Matrice 2 : `4x5`
+
+**Résultats Attendus** 
+Une exception ou un message d'erreur est attendu lors de l'opération de multiplication, car les dimensions de Matrice 1 et Matrice 2 ne sont pas compatibles. Les opérations d'addition et de soustraction devraient néanmoins être exécutées normalement si les dimensions de lignes et de colonnes correspondent.
+
+#### Cas 3 : Module avec des valeurs limites (`0` et `1`)
+
+##### Sous-cas 3.1 : Module égal à `0`
+
+**Description** 
+Un test avec `module = 0` est utilisé pour évaluer le comportement du programme avec une valeur de modulo potentiellement invalide, qui pourrait entraîner des divisions par zéro ou d'autres erreurs.
+
+**Entrée**
+\- Module : `0`
+\- Matrice 1 : `5x5`
+\- Matrice 2 : `5x5`
+
+**Résultats Attendus** 
+Le programme devrait idéalement gérer ce cas en produisant une erreur ou en rejetant la valeur `0` pour le module, car le modulo `0` n'est pas défini dans les mathématiques classiques.
+
+##### Sous-cas 3.2 : Module égal à `1`
+
+**Description** 
+Ce test utilise un module de `1`, ce qui signifie que toutes les valeurs de matrice devraient théoriquement être réduites à `0` dans les opérations mod.
+
+**Entrée**
+\- Module : `1`
+\- Matrice 1 : `5x5`
+\- Matrice 2 : `5x5`
+
+**Résultats Attendus** 
+Toutes les valeurs dans les résultats d'addition, de soustraction, et de multiplication devraient être `0`, car toute opération mod `1` donne `0`.
+
+#### Cas 4 : Dimensions de matrices incorrectes
+
+##### Sous-cas 4.1 : Matrice avec 0 ligne
+
+**Description** 
+Le test utilise une matrice avec `0` ligne, ce qui représente une matrice vide. Ce cas vérifie si le programme gère les matrices sans ligne de manière appropriée.
+
+**Entrée**
+\- Module : `10`
+\- Matrice 1 : `0x5`
+\- Matrice 2 : `5x5`
+
+**Résultats Attendus** 
+Une erreur ou un avertissement est attendu pour signaler qu'une matrice vide ne peut pas participer aux opérations matricielles.
+
+##### Sous-cas 4.2 : Matrice avec 0 colonne
+
+**Description** 
+Similaire au cas précédent, mais cette fois avec `0` colonne, pour tester la gestion des matrices sans colonne.
+
+**Entrée**
+\- Module : `10`
+\- Matrice 1 : `5x0`
+\- Matrice 2 : `5x5`
+
+**Résultats Attendus** 
+Une erreur ou un avertissement est attendu pour indiquer qu'une matrice sans colonne ne peut pas être manipulée dans les opérations de matrices.
+
+##### Sous-cas 4.3 : Dimensions négatives
+
+**Description** 
+Ce test utilise des valeurs de dimension négatives, ce qui est un cas invalide et permet de vérifier que le programme gère bien les valeurs de dimension non-positives.
+
+**Entrée**
+\- Module : `10`
+\- Matrice 1 : `-3x5`
+\- Matrice 2 : `5x5`
+
+**Résultats Attendus** 
+Une exception ou un message d'erreur indiquant que les dimensions de matrice ne peuvent pas être négatives est attendu.
 
 ### Code source 
 
 #### Matrix.java
-```java
-```
+![](/home/athena/Insync/POO/POO-Lab05/Matrix.png)
 
 #### operations.java
-```java
-```
+
+![](/home/athena/Insync/POO/POO-Lab05/operations.png)
 
 #### Main.java
-```java
-```
+
+![](/home/athena/Insync/POO/POO-Lab05/Main.png)
 
 ### Hypothèses de travail 
 
